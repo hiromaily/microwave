@@ -11,3 +11,8 @@ microwave 210 500
  wattage: 1000 (w), time: 105 (s)
  wattage: 1500 (w), time: 70 (s)
 ```
+
+## Install
+```
+go install github.com/hiromaily/microwave@v1.0.0
+```

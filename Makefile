@@ -10,3 +10,4 @@ run:
 .PHONY: exec
 exec:
 	microwave 210 500
+
