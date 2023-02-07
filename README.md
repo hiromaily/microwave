@@ -2,6 +2,7 @@
 calculate time each wattage for microwave oven
 
 ```bash
+# microwave [time(s)] [wattage]
 microwave 210 500
  wattage: 300 (w), time: 350 (s)
  wattage: 500 (w), time: 210 (s)
@@ -10,6 +11,12 @@ microwave 210 500
  wattage: 800 (w), time: 131 (s)
  wattage: 1000 (w), time: 105 (s)
  wattage: 1500 (w), time: 70 (s)
+
+# args2:wattage is option, default is 500
+microwave 210
+ wattage: 300 (w), time: 350 (s)
+ wattage: 500 (w), time: 210 (s)
+ ...
 ```
 
 ## Install

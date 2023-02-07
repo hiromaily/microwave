@@ -12,7 +12,7 @@ import (
 func main() {
 	msg := `Usage: %s [options...] arg1 arg2
   arg1: time (s)
-  arg2: wattage
+  arg2: wattage (option: default 500)
   
   e.g. $ mw 210 500
 `
@@ -22,11 +22,12 @@ func main() {
 		flag.PrintDefaults()
 	}
 
-	if len(os.Args) != 3 {
+	if len(os.Args) != 2 && len(os.Args) != 3 {
 		showHelp()
 		return
 	}
-	var baseTime, baseWattage int
+	var baseTime int = 0
+	var baseWattage int = 500
 
 	//for i, v := range os.Args[1:] {
 	//	fmt.Printf("args[%d] -> %s\n", i, v)
@@ -36,10 +37,12 @@ func main() {
 	} else {
 		baseTime = v
 	}
-	if v, err := strconv.Atoi(os.Args[2]); err != nil {
-		panic(err)
-	} else {
-		baseWattage = v
+	if len(os.Args) == 3 {
+		if v, err := strconv.Atoi(os.Args[2]); err != nil {
+			panic(err)
+		} else {
+			baseWattage = v
+		}
 	}
 
 	list := [7]int{300, 500, 600, 700, 800, 1000, 1500}
